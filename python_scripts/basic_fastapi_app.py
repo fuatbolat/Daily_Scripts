@@ -12,6 +12,23 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-@app.get("/main/{name}")
-def main(name):
-    return {"Selam": name}
+BOOKS = [
+        {"title": "1984", "author": "George Orwell"},
+        {"title": "Brave New World", "author": "Aldous Huxley"},
+        {"title": "Fahrenheit 451", "author": "Ray Bradbury"},
+]   
+
+
+@app.get("/main/{title}")
+def main(title):
+    for book in BOOKS:
+        if book["title"].lower() == title.lower():
+            return book
+    return {"error": "Book not found"}
+
+@app.get("/main/author/")
+def main(author=None):
+    for book in BOOKS:
+        if book["author"].lower() == author.lower():
+            return book
+    return {"error": "Book not found"}
