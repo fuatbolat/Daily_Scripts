@@ -1,4 +1,4 @@
-#!/bin/bash
+gi#!/bin/bash
 
 # ELK Stack Docker Kurulum Scripti
 
