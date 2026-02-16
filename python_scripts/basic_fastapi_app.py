@@ -27,8 +27,17 @@ def main(title):
     return {"error": "Book not found"}
 
 @app.get("/main/author/")
-def main(author=None):
+def main(author:str):
     for book in BOOKS:
         if book["author"].lower() == author.lower():
             return book
     return {"error": "Book not found"}
+
+@app.on_event("startup")
+def start():
+    print("starting your app")
+
+@app.on_event("shutdown")
+def shutdown():
+    print("closing your app")
+    
