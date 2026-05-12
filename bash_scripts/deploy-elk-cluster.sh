@@ -1,17 +1,4 @@
-#!/bin/bash
-# =============================================================================
-# ELK 3-Node Cluster - Tam Otomatik Kurulum Scripti
-# Çalıştırıldığı sunucu: DOASSPRAPPELKP01 (10.113.202.110)
-# =============================================================================
-# Kullanım: bash deploy-elk-cluster.sh
-#
-# ÖN KOŞUL: Bu scripti NODE1 (10.113.202.110) üzerinde çalıştırın.
-#           Uzak node'lara SSH_USER (varsayılan: tuygansible) ile bağlanılır.
-#           Kullanıcının uzak sunucularda NOPASSWD sudo yetkisi olmalıdır.
-#           SSH key kurulu değilse:
-#             ssh-copy-id tuygansible@10.113.202.111
-#             ssh-copy-id tuygansible@10.113.202.112
-# =============================================================================
+===================================
 
 set -uo pipefail
 
